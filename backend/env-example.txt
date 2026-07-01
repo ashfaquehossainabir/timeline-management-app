@@ -1,0 +1,4 @@
+EMAIL_PASS=Your App Password
+EMAIL_USER=Your Email ID
+JWT_SECRET=Your JWT Secret
+MONGO_URI=Your Mongo URI
