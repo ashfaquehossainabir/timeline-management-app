@@ -44,7 +44,6 @@ export default function TaskDetailsModal({ task, closeModal }) {
         <div className="task-details">
           <p><strong>Title:</strong> {task.title}</p>
           <p><strong>Assigned To:</strong> {task.assignedTo}</p>
-          <p><strong>Created By:</strong> {task.createdBy}</p>
           <p><strong>Status:</strong> {task.status}</p>
           <p><strong>Priority:</strong> {task.priority}</p>
 
