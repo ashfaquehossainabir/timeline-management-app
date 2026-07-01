@@ -4,6 +4,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import EditTaskModal from "./EditTaskModal";
 import ConfirmModal from "./ConfirmModal";
+import TaskDetailsModal from "./TaskDetailsModal";
 import "./TaskCard.css";
 
 export default function TaskCard({ task }) {
@@ -11,6 +12,7 @@ export default function TaskCard({ task }) {
   const { user } = useAuth();
   const [showEdit, setShowEdit] = useState(false);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
 
   const isSelfAssigned =
     user.role === "employee" && task.assignedTo === user.name;
@@ -141,6 +143,13 @@ export default function TaskCard({ task }) {
         >
           Delete
         </button>
+
+        <button
+          className="view-btn"
+          onClick={() => setShowDetails(true)}
+        >
+          View Details
+        </button>
       </div>
 
       {showEdit && (
@@ -167,6 +176,13 @@ export default function TaskCard({ task }) {
               setShowDeleteConfirm(false);
             }
           }}
+        />
+      )}
+
+      {showDetails && (
+        <TaskDetailsModal
+          task={task}
+          closeModal={() => setShowDetails(false)}
         />
       )}
     </div>
