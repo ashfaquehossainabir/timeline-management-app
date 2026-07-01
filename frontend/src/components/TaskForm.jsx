@@ -12,7 +12,7 @@ export default function TaskForm({ closeModal }) {
     const fetchUsers = async () => {
       try {
         const res = await axios.get(
-          "https://timeline-management-app.onrender.com/api/users",
+          "https://timeline-management-app-7dx1.onrender.com/api/users",
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
